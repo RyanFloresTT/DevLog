@@ -1,0 +1,8 @@
+<div class="bg-white rounded-lg shadow p-4">
+  <div class="prose">
+    <%= entry.response %>
+  </div>
+  <div class="text-sm text-gray-500 mt-2">
+    <%= time_ago_in_words(entry.created_at) %> ago
+  </div>
+</div>

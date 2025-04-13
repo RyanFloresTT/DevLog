@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+@tailwind utilities;
+
+.font-notes {
+    font-family: 'Indie Flower', cursive;
+}
+
+.font-sketch {
+    font-family: 'Architects Daughter', cursive;
+}
+
+.font-typewriter {
+    font-family: 'Cutive Mono', monospace;
+}
+
+.permanent-marker-regular {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@layer components {
+    .paper-effect {
+        @apply bg-white
+        shadow-md
+        rounded-sm
+        border border-gray-200
+        p-6
+        relative;
+        background-image: linear-gradient(#f8f9fa 1px, transparent 1px),
+        linear-gradient(90deg, #f8f9fa 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+
+    .paper-texture {
+        @apply bg-white
+        shadow-lg
+        rounded-md
+        border border-gray-100;
+        background-image:
+                repeating-linear-gradient(
+                        45deg,
+                        #f8f9fa 0px,
+                        #f8f9fa 1px,
+                        transparent 1px,
+                        transparent 3px
+                );
+    }
+
+    .paper-background {
+        @apply min-h-screen;
+        background-color: #f0f0f0;
+        background-image:
+                linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+                linear-gradient(#e5e5e5 0.1em, transparent 0.1em);
+        background-size: 100% 1.2em;
+        position: relative;
+    }
+
+    .paper-background::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+                radial-gradient(circle at center,
+                rgba(255,255,255,0.1) 0%,
+                rgba(255,255,255,0.05) 45%,
+                rgba(0,0,0,0.1) 100%);
+        pointer-events: none;
+    }
+}

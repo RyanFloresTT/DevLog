@@ -1,0 +1,27 @@
+
+<% content_for :title, "New project" %>
+
+<div class="container mx-auto px-4 py-8">
+  <div class="max-w-2xl mx-auto">
+    <div class="paper-effect">
+      <div class="mb-6">
+        <h1 class="text-3xl font-sketch text-gray-900 mb-2">New Project</h1>
+        <div class="h-1 w-20 bg-blue-600 rounded"></div>
+      </div>
+
+      <div class="paper-texture p-6">
+        <%= render "form", project: @project %>
+      </div>
+
+      <div class="mt-6">
+        <%= link_to projects_path,
+                    class: "inline-flex items-center text-gray-600 hover:text-gray-800 transition-colors duration-150" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+          </svg>
+          Back to projects
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

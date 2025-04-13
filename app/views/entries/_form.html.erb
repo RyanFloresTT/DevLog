@@ -1,0 +1,13 @@
+<%= form_with(model: [@project, @session, @session.entries.build],
+              class: "bg-gray-50 rounded-lg p-4",
+              data: { controller: "reset-form" }) do |f| %>
+  <div class="mb-4">
+    <%= f.text_area :content,
+                    rows: 3,
+                    placeholder: "What's your progress update?",
+                    class: "w-full rounded-lg border-gray-300" %>
+  </div>
+
+  <%= f.submit "Add Update",
+               class: "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" %>
+<% end %>

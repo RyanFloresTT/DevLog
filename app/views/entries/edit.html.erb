@@ -1,0 +1,26 @@
+<% content_for :title, "Editing entry" %>
+
+<div class="container mx-auto px-4 py-8">
+  <div class="max-w-2xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6">Edit Entry</h1>
+
+    <%= form_with(model: [@project, @session, @entry],
+                  class: "bg-white rounded-lg shadow-md p-6") do |form| %>
+
+      <div class="mb-4">
+        <%= form.text_area :response,
+                           rows: 3,
+                           class: "w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500" %>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <%= form.submit "Update Entry",
+                        class: "bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" %>
+
+        <%= link_to "Back to Session",
+                    project_session_path(@project, @session),
+                    class: "text-gray-600 hover:text-gray-800" %>
+      </div>
+    <% end %>
+  </div>
+</div>
