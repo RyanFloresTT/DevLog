@@ -1,28 +1,32 @@
-<div id="<%= dom_id session %>">
-  <% if session.ended_at.nil? %>
-    <h1 class="text-center text-6xl py-4 permanent-marker-regular text-gray-900 mb-6">
+<div id="<%= dom_id session %>" class="bg-gray-50 p-6 rounded-lg shadow-lg space-y-4">
+  <!-- Dynamic Header -->
+  <h1 class="text-center text-6xl py-4 permanent-marker-regular text-gray-900">
+    <% if session.ended_at.nil? %>
       I'm working on
-    </h1>
     <% else %>
-    <h1 class="text-center text-6xl py-4 permanent-marker-regular text-gray-900 mb-6">
       I worked on
-    </h1>
-  <% end %>
-  <h1 class="text-center text-6xl py-4 permanent-marker-regular text-gray-900 mb-6">
-    <%= session.name %>
+    <% end %>
   </h1>
 
-  <div class="flex justify-between py-2">
-    <h1 class="text-2xl">
-      <%= session.started_at.strftime("%B %d, %Y") %>
-    </h1>
+  <!-- Session Name -->
+  <h2 class="text-center text-5xl py-2 font-sketch text-gray-800 mb-6">
+    <%= session.name %>
+  </h2>
 
-    <h1 class="text-2xl">
+  <!-- Date and Status -->
+  <div class="flex justify-between items-center py-4 text-lg font-typewriter text-gray-700">
+    <!-- Start Date -->
+    <span>
+      <%= session.started_at.strftime("%B %d, %Y") %>
+    </span>
+
+    <!-- Status or Duration -->
+    <span>
       <% if session.ended_at.nil? %>
-        In Progress (<%= time_ago_in_words(session.started_at) %>)
+        In Progress (<%= time_ago_in_words(session.started_at) %> ago)
       <% else %>
-        <%= distance_of_time_in_words(session.started_at, session.ended_at) %>
+        Duration: <%= distance_of_time_in_words(session.started_at, session.ended_at) %>
       <% end %>
-    </h1>
+    </span>
   </div>
 </div>

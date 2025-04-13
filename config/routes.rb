@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   root "projects#index"
   resources :projects do
+    member do
+      get :export_all, to: "projects#export_all"
+    end
     resources :sessions do
       get :quick_new, on: :collection
       resources :entries
+      member do
+        get :export
+      end
     end
   end
 

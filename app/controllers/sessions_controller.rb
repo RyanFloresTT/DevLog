@@ -41,7 +41,7 @@ class SessionsController < ApplicationController
   def update
     respond_to do |format|
       if @session.update(session_params)
-        format.html { redirect_to project_path(@project), notice: "Session was successfully updated." }
+        format.html { redirect_to project_session_path(@project, @session), notice: "Session was successfully updated." }
         format.json { render :show, status: :ok, location: @session }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,6 +57,28 @@ class SessionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to project_path(@project), status: :see_other, notice: "Session was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def export
+    session = Session.includes(:entries).find(params[:id])
+
+    markdown_data = <<~MARKDOWN
+      ## #{session.name}
+  
+      **Opening Notes**:
+      #{session.opening_notes}
+  
+      ### Entries:
+      #{session.entries.map { |entry| "- #{entry.response} (#{I18n.l(entry.created_at, format: :long)})" }.join("\n")}
+  
+      **Closing Notes**:
+      #{session.closing_notes || "No closing notes provided."}
+    MARKDOWN
+
+    respond_to do |format|
+      format.text { send_data markdown_data, filename: "#{session.name.parameterize(separator: '_')}.md", type: "text/markdown" }
+      format.html { redirect_to project_session_path(@project, session), notice: "Markdown file exported successfully." }
     end
   end
 

@@ -57,6 +57,22 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def export_all
+    @project = Project.find(params[:id])
+    sessions = @project.sessions
+
+    project_header = "# #{@project.name}\n\n"
+
+    exported_content = sessions.map(&:export).join("\n\n---\n\n")
+
+    final_content = project_header + exported_content
+
+    send_data final_content,
+              type: "text/markdown",
+              disposition: "attachment",
+              filename: "#{@project.name.parameterize(separator: '_')}_sessions.md"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project

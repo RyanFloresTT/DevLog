@@ -1,12 +1,25 @@
 <% content_for :title, "Editing session" %>
 
-<h1>Editing session</h1>
+<div class="max-w-3xl mx-auto px-4 py-8 space-y-6">
+  <!-- Header -->
+  <h1 class="text-3xl permanent-marker-regular text-gray-900">
+    Editing: <span class="font-bold"><%= @session.name %></span>
+  </h1>
 
-<%= render "form", session: @session %>
+  <!-- Form Container -->
+  <div class="bg-white rounded-lg shadow p-6">
+    <%= render "form", session: @session, new_record: false %>
+  </div>
 
-<br>
-
-<div>
-  <%= link_to "Show this session", project_session_path(@project, @session) %> |
-  <%= link_to "Back to sessions", project_path(@project) %>
+  <!-- Action Links -->
+  <div class="flex justify-between items-center text-lg font-typewriter text-gray-600">
+    <!-- Show Session -->
+    <%= link_to project_session_path(@project, @session),
+                class: "inline-flex items-center hover:text-gray-800" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 24 24" fill="currentColor" aria-label="Back to sessions">
+        <path d="M10.9 16.5l-3.3-3.3c-.2-.2-.2-.5 0-.7l3.3-3.3c.2-.2.5-.2.7 0s.2.5 0 .7l-2.4 2.4h8.2c.3 0 .5.2.5.5s-.2.5-.5.5h-8.2l2.4 2.4c.2.2.2.5 0 .7-.2.2-.5.2-.7 0z"/>
+      </svg>
+      Back to this session
+    <% end %>
+  </div>
 </div>
