@@ -34,8 +34,6 @@ class SessionsController < ApplicationController
     @session.started_at = Time.current unless @session.started_at
     if @session.save
       redirect_to project_session_path(@project, @session), notice: "Session started!"
-    else
-      render :_quick_form, status: :unprocessable_entity
     end
   end
 

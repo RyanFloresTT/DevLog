@@ -56,7 +56,7 @@
               </div>
               <div class="px-2 text-2xl">
                 <%= button_to "❌",
-                              [@project, @session, entry],
+                              project_session_entry_path(@project, @session, entry),
                               method: :delete,
                               form: { data: { turbo_confirm: "Are you sure you want to delete this entry?" } } %>
               </div>

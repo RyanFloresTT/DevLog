@@ -15,7 +15,7 @@
       <% @sessions.each do |session| %>
         <div class="paper-texture p-4">
           <%= render session %>
-          <%= link_to "Show this session", session,
+          <%= link_to "Show this session", project_session_path(session.project, session),
                       class: "mt-2 inline-block px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg transition-colors duration-150 text-sm" %>
         </div>
       <% end %>

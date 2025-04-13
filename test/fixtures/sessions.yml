@@ -4,6 +4,7 @@ one:
   project: one
   started_at: 2025-04-11 23:23:00
   ended_at: 2025-04-11 23:23:00
+  opening_notes: hello
 
 two:
   project: two
