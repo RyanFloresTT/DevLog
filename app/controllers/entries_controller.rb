@@ -29,11 +29,10 @@ class EntriesController < ApplicationController
     @entry = @session.entries.build(entry_params)
 
     if @entry.save
-      redirect_to project_session_path(@project, @session), notice: 'Update added!'
+      redirect_to project_session_path(@project, @session), notice: "Update added!"
     else
-      redirect_to project_session_path(@project, @session), alert: 'Could not add update.'
+      redirect_to project_session_path(@project, @session), alert: "Could not add update."
     end
-
   end
 
   # PATCH/PUT /entries/1 or /entries/1.json
@@ -57,21 +56,21 @@ class EntriesController < ApplicationController
   end
 
   private
-    def set_project
-      @project = Project.find(params[:project_id])
-    end
+  def set_project
+    @project = Project.find(params[:project_id])
+  end
 
-    def set_session
-      @session = @project.sessions.find(params[:session_id])
-    end
+  def set_session
+    @session = @project.sessions.find(params[:session_id])
+  end
 
   # Use callbacks to share common setup or constraints between actions.
-    def set_entry
-      @entry = @session.entries.find(params[:id])
-    end
+  def set_entry
+    @entry = @session.entries.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def entry_params
-      params.require(:entry).permit(:response)
-    end
+  # Only allow a list of trusted parameters through.
+  def entry_params
+    params.require(:entry).permit(:response)
+  end
 end

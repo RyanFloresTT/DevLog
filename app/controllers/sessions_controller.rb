@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
     @session = @project.sessions.build(session_params)
     @session.started_at = Time.current unless @session.started_at
     if @session.save
-      redirect_to project_session_path(@project, @session), notice: 'Session started!'
+      redirect_to project_session_path(@project, @session), notice: "Session started!"
     else
       render :_quick_form, status: :unprocessable_entity
     end
@@ -72,7 +72,7 @@ class SessionsController < ApplicationController
       @project = Project.find(params[:project_id])
     end
 
-      # Only allow a list of trusted parameters through.
+    # Only allow a list of trusted parameters through.
     def session_params
       params.require(:session).permit(:started_at, :ended_at, :opening_notes, :closing_notes, :name)
     end

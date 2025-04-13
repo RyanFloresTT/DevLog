@@ -41,10 +41,13 @@
 *.rbc
 capybara-*.html
 .rspec
-/db/
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /db/*.sqlite3-[0-9]*
+cable_schema.rb
+cache_schema.rb
+queue_schema.rb
+
 /public/system
 /coverage/
 /spec/tmp
