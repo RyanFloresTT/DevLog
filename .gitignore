@@ -151,3 +151,5 @@ config/credentials/*.key
 .vscode/
 .idea/
 
+
+/config/credentials/production.key

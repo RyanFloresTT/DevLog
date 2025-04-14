@@ -1,0 +1,17 @@
+services:
+  trackle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: trackle:latest
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_ENV: production
+      RAILS_LOG_TO_STDOUT: "true"
+      RAILS_SERVE_STATIC_FILES: "true"
+      RAILS_MASTER_KEY: d5aa5720d7132d659e4dbf4b45ee5773
+    volumes:
+      - ./storage:/rails/storage
+      - ./config:/rails/config
+    restart: unless-stopped

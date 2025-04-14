@@ -1,24 +1,17 @@
-# README
+## 🚀 Quick Start with Docker Compose
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. **Build and start the app:**
 
-Things you may want to cover:
+   ```bash
+   docker-compose up -d --build
+   ```
 
-* Ruby version
+2. **Access the app:**
 
-* System dependencies
+   Open your browser and go to [http://localhost](http://localhost)
 
-* Configuration
+3. **To stop the app:**
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+   ```bash
+   docker-compose down
+   ```
