@@ -11,7 +11,7 @@
 2. **Run the app:**
 
    ```bash
-   docker run -p 3000:3000 -e SECRET_KEY_BASE="dummy_key" trustytea/trackle
+   docker run -d -p 3000:3000 -e SECRET_KEY_BASE="dummy_key" trustytea/trackle
    ```
 
 3. **Access the app:**
