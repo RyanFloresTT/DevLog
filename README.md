@@ -56,3 +56,13 @@
 4. **Access the app:**
 
    Open your browser and go to [http://localhost:3000](http://localhost:3000).
+
+---
+
+🎥 Follow the Journey
+Check out my YouTube to watch how I built the app:
+
+[Watch the Dev Vlog](https://www.youtube.com/watch?v=mzpelMgZUBU)
+
+
+P.S. You might come across the name "Trackle" mentioned here and there, originally, that was the name I had in mind before I decided to go with "DevLog" instead! 😊
