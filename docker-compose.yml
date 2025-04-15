@@ -7,10 +7,12 @@ services:
     ports:
       - "3000:3000"
     environment:
-      RAILS_ENV: production
+      RAILS_ENV: development
       RAILS_LOG_TO_STDOUT: "true"
       RAILS_SERVE_STATIC_FILES: "true"
-      RAILS_MASTER_KEY: d5aa5720d7132d659e4dbf4b45ee5773
+      RAILS_MASTER_KEY: bc05c5e9ab1c2799e0ab0546c8108775
+      SECRET_KEY_BASE: viAwOgCs7+aTasYTF4NqdyFjT5IF0xekTrktnOF6Vi/aIm7/QYSovhMYq8k8dAlAahLBjCG9Xw1/W90KQ6R7hDV6U6CDq9KB18PKxP4TBayaj+cIIfzupxQQ7G06q6IuSadXpC1TJAN7yKDq697ZcwJt0QA7nO31rD27aX7MRiBqbVBrvw14YY4OJmhjp73z87xcDJZNa9iwJwJXpz+QzVzqpMXQ3u1tezAUQJGXogUkpbu5UlyaaLPLLLhBJEkPrzNL7jTIERKB2QFq5Opu8RWiNO2zXTFhs13kh50fzPKE2AfXrfi4gbbgVLJ0wWd6NFuw4WS4N0OIO64QtZZlfZiYlPs7S20mbJYihLx2Su4LKmW1X/ysv/sEpXgDReny0Yw+youhTexOpV3/bJGuS33zSLUl/0m1w+G/WPpwjMDr46wgW/MdQjgExAqmZWdsuhTElUOfhUKMctij7NqmRGJhMB6mDjoJ5XIeDRvpIu81CJeIW1EPoU2FcrzeVrE6G465Bcr86Kht8TzQA8PCAOoXPAPIj3NrkxKeosvzKrmSMuMP8bB5ifQnO7rsr8356z8tHKibNZ3nFpsWgkvFa4ao3iLCmbnZR0S/90U2/ne3aa3vZcZa2stToGT4sGFd58naUi9dCfRl1PGu40HSQ3p1+B7NK7wcltswenh/OxZwiDXeqf/qMSWPTnmsQPnnuECe3xtJQpsAgoM4/i2y2HwGriuA5iCBPhol2gGlzItQ3oxzf+pAJ6pNvHOEK/GZIYWYXg+m1kWpbALjbu656x47HxB2FcVahWleEMSF11/aEPhFc2WrxHO2qxTrs1Z5hZ7DaAuRd3RBcofiasMheNN/eNWgOsJ+8ECCx4edNQH/imUrep2fEgZOUB7DgwZyfP+l4B0HAvvf+I6rzMbpR3KmLyIPc1Msab2QgVx0s1YrS/+nEN6Z8jK+VWBVGFOKSdBHpilkq1ZcS2Id8gaK4iI+Ak3mkUJ1P5X6Uc0wT7IE9QS8uJ5HoeG3nkdfLl6Z8HRScQslQI0eXemhAwzyJ9DjeaN2cyq2lr+XpbPE--NvbutDoMUf5truGq--o1RMz90NDh7iDd6gTsLfdw==
+    command: bin/rails s -b '0.0.0.0'
     volumes:
       - ./storage:/rails/storage
       - ./config:/rails/config

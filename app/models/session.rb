@@ -5,7 +5,7 @@ class Session < ApplicationRecord
   validates :name, presence: true
   validates :opening_notes, presence: true
 
-  def export
+   def export
     <<~MARKDOWN
       ## #{name}
 

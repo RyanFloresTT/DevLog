@@ -27,7 +27,7 @@ class EntriesController < ApplicationController
   # POST /entries or /entries.json
   def create
     @entry = @session.entries.build(entry_params)
-
+    @entry.created_at = Time.now
     if @entry.save
       redirect_to project_session_path(@project, @session), notice: "Update added!"
     else

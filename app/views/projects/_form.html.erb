@@ -28,6 +28,6 @@
   </div>
 
   <div class="flex justify-end">
-    <%= form.submit "Create", class: "px-4 py-2 text-2xl font-sketch text-blue-600 rounded-lg hover:text-slate-900 transition-colors duration-150" %>
+    <%= form.submit (project.new_record? ? "Create" : "Update"), class: "px-4 py-2 text-2xl font-sketch text-blue-600 rounded-lg hover:text-slate-900 transition-colors duration-150" %>
   </div>
 <% end %>
