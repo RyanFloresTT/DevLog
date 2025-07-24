@@ -1,6 +1,6 @@
 # DevLog
 
-![DevLog Home Page](Images/home.png)
+![DevLog Home Page](./images/home.png)
 
 > **Track your coding journey, reflect, and blog with ease.**
 
